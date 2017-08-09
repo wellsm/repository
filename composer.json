@@ -1,0 +1,23 @@
+{
+    "name": "well/repository",
+    "description": "Package for manipulate Eloquent ORM using repositories with addons",
+    "keywords": [
+        "laravel",
+        "repository",
+        "beproud"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wellington Martins",
+            "email": "wellingtonsdsm@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Well\\Repository\\": "src/Well/Repository/"
+        }
+    },
+    "minimum-stability": "dev"
+}
