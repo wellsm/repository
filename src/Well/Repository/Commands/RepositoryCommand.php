@@ -44,11 +44,18 @@ class RepositoryCommand extends Command
     public function handle()
     {
         $name = $this->argument('name');
-               
-        MigrationGenerator::generate($name);
-        EntityGenerator::generate($name);
-        RepositoryGenerator::generate($name);
-        ControllerGenerator::generate($name);
+
+        $generator = new MigrationGenerator();
+        $generator->generate($name);
+
+        $generator = new EntityGenerator();
+        $generator->generate($name);
+
+        $generator = new RepositoryGenerator();
+        $generator->generate($name);
+
+        $generator = new ControllerGenerator();
+        $generator->generate($name);
         
         $this->info('Repository ' . $name . ' Created! ');
     }

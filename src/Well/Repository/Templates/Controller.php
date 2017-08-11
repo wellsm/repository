@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace _NAMESPACE_;
 
 use Illuminate\Http\Request;
-use App\Repositories\_TABLE_Repository;
+use _NAMESPACE_\Repositories\_TABLE_Repository;
+use App\Http\Controllers\Controller;
 
 class _TABLE_Controller extends Controller
 {

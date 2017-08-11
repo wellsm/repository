@@ -4,9 +4,9 @@ namespace Well\Repository\Generators;
 
 use Carbon\Carbon;
 
-class MigrationGenerator
+class MigrationGenerator extends Generator
 {
-    public static function generate($name)
+    public function generate($name)
     {
         $migration = file_get_contents(__DIR__ . '/../Templates/Migration.php');
         
@@ -22,9 +22,9 @@ class MigrationGenerator
         $date_migration = str_replace(':', '', $date_migration);
         
         $name_migration = '_create_' . $name_table . '_table';
-        $filename = database_path('migrations/' . $date_migration . $name_migration . '.php');
+        $filename = $this->getConfigPath('migrations') . $date_migration . $name_migration . '.php';
                 
-        $folder_migration = database_path('migrations');
+        $folder_migration = $this->getConfigPath('migrations');
         $files = scandir($folder_migration);
 
         $found_migration = false;
