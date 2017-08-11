@@ -3,8 +3,7 @@
     "description": "Package for manipulate Eloquent ORM using repositories with addons",
     "keywords": [
         "laravel",
-        "repository",
-        "beproud"
+        "repository"
     ],
     "license": "MIT",
     "authors": [
@@ -19,5 +18,12 @@
             "Well\\Repository\\": "src/Well/Repository/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Well\\Repository\\Providers\\RepositoryServiceProvider"
+            ]
+        }
+    }
 }
