@@ -10,6 +10,9 @@ class RepositoryGenerator extends Generator
 
         $repository = file_get_contents(__DIR__ . '/../Templates/Repository.php');
         $repository = str_replace('_TABLE_', $name_repository, $repository);
+        $repository = str_replace('_ENTITY_NAMESPACE_', str_replace('/', '\\', $this->config->generator->paths->models), $repository);
+        $repository = str_replace('_REPOSITORY_NAMESPACE_', str_replace('/', '\\', $this->config->generator->paths->repositories), $repository);
+        $repository = str_replace('_NAMESPACE_', $this->getNamespace(), $repository);
 
         if (!file_exists($this->getConfigPath('repositories'))) {
             mkdir($this->getConfigPath('repositories'), 0777, true);

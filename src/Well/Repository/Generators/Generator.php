@@ -11,7 +11,7 @@ namespace Well\Repository\Generators;
 
 class Generator
 {
-    private $config;
+    protected $config;
 
     public function __construct()
     {

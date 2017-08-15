@@ -1,6 +1,6 @@
 <?php
 
-namespace _NAMESPACE_;
+namespace _NAMESPACE_\_CONTROLLER_NAMESPACE_;
 
 use Illuminate\Http\Request;
 use _NAMESPACE_\Repositories\_TABLE_Repository;

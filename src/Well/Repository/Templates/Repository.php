@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Repositories;
+namespace _NAMESPACE_\_REPOSITORY_NAMESPACE_;
 
 use Well\Repository\Repositories\BaseRepository;
-use App\Entities\_TABLE_;
+use _NAMESPACE_\_ENTITY_NAMESPACE_\_TABLE_;
 
 class _TABLE_Repository extends BaseRepository
 {
