@@ -17,6 +17,10 @@ class ControllerGenerator extends Generator
         $filename = $this->getConfigPath('controllers') . $name_controller . 'Controller.php';
                 
         if(! file_exists($filename)){
+        	if(! file_exists($this->getConfigPath('controllers'))){
+        		mkdir($this->getConfigPath('controllers'), 0755, true);
+	        }
+
             file_put_contents($filename, $controller);
         }  
     }
