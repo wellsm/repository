@@ -8,7 +8,7 @@ class MigrationGenerator extends Generator
 {
     public function generate($name)
     {
-        $migration = file_get_contents(__DIR__ . '/../Templates/Migration.php');
+        $migration = file_get_contents(__DIR__ . '/../Stubs/Migration.stub');
         
         $name_table = snake_case(str_plural($name));
         

@@ -8,37 +8,38 @@
 
 namespace Well\Repository\Generators;
 
-
 class Generator
 {
-    protected $config;
+	protected $config;
 
-    public function __construct()
-    {
-        $this->getConfig();
-    }
+	public function __construct()
+	{
+		$this->getConfig();
+	}
 
-    public function getNamespace()
-    {
-        return $this->config->generator->root_namespace;
-    }
+	public function getNamespace()
+	{
+		$namespace = $this->config->generator->root_namespace;
 
-    public function getBasePath()
-    {
-        return $this->config->generator->base_path;
-    }
+		if (substr($namespace, -1) == '\\') $namespace = substr($namespace, 0, strlen($namespace) - 1);
 
-    public function getConfigPath($type)
-    {
-        return str_replace('\\', '/', $this->getBasePath() . '/' . $this->config->generator->paths->$type . '/');
-    }
+		return $namespace;
+	}
 
-    public function getConfig()
-    {
-        if (file_exists(config_path('repository.php'))) {
-            $config = config('repository');
-        }
+	public function getBasePath()
+	{
+		return $this->config->generator->base_path;
+	}
 
-        $this->config = json_decode(json_encode($config));
-    }
+	public function getConfigPath($type)
+	{
+		return str_replace('\\', '/', $this->getBasePath() . '/' . $this->config->generator->paths->$type . '/');
+	}
+
+	public function getConfig()
+	{
+		$config = config('repository');
+
+		$this->config = json_decode(json_encode($config));
+	}
 }

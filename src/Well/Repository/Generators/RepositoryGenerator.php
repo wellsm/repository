@@ -8,7 +8,7 @@ class RepositoryGenerator extends Generator
     {
         $name_repository = studly_case($name);
 
-        $repository = file_get_contents(__DIR__ . '/../Templates/Repository.php');
+        $repository = file_get_contents(__DIR__ . '/../Stubs/Repository.stub');
         $repository = str_replace('_TABLE_', $name_repository, $repository);
         $repository = str_replace('_ENTITY_NAMESPACE_', str_replace('/', '\\', $this->config->generator->paths->models), $repository);
         $repository = str_replace('_REPOSITORY_NAMESPACE_', str_replace('/', '\\', $this->config->generator->paths->repositories), $repository);

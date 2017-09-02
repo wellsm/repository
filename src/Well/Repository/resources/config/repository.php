@@ -13,14 +13,14 @@ return [
     |--------------------------------------------------------------------------
     |
     */
-    'generator' => [
-        'base_path' => app_path(),
-        'root_namespace' => 'App\\',
-        'paths' => [
-            'models' => 'Entities',
-            'repositories' => 'Repositories',
-	        'migrations' => 'database/migrations',
-            'controllers' => 'Http/Controllers',
-        ]
-    ]
+	'generator' => [
+		'base_path' => app_path(),
+		'root_namespace' => 'App\\',
+		'paths' => [
+			'models' => 'Entities',
+			'repositories' => 'Repositories',
+			'controllers' => 'Http/Controllers/Admin',
+			'migrations' => '../database/migrations'
+		]
+	]
 ];
