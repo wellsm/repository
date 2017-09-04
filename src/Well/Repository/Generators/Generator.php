@@ -19,7 +19,11 @@ class Generator
 
 	public function getNamespace()
 	{
-		return $this->config->generator->root_namespace;
+		$namespace = $this->config->generator->root_namespace;
+
+		if (substr($namespace, -1) == '\\') $namespace = substr($namespace, 0, strlen($namespace) - 1);
+
+		return $namespace;
 	}
 
 	public function getBasePath()

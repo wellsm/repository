@@ -211,6 +211,8 @@ abstract class BaseRepository
 		$model->fill($attributes);
 		$model->save();
 
+		$this->reset();
+
 		return $model;
 	}
 
@@ -229,6 +231,8 @@ abstract class BaseRepository
 		$model->fill($attributes);
 		$model->save();
 
+		$this->reset();
+
 		return $model;
 	}
 
@@ -241,7 +245,7 @@ abstract class BaseRepository
 	 */
 	public function delete($id)
 	{
-		return $this->model->destroy($id);
+		return $this->model->getModel()->destroy($id);
 	}
 
 	/**
