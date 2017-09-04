@@ -19,7 +19,7 @@ return [
         'paths' => [
             'models' => 'Entities',
             'repositories' => 'Repositories',
-	        'migrations' => 'database/migrations',
+	        'migrations' => '../database/migrations',
             'controllers' => 'Http/Controllers',
         ]
     ]
