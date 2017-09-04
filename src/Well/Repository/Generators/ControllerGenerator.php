@@ -8,7 +8,7 @@ class ControllerGenerator extends Generator
     {
         $name_controller = studly_case($name);
         
-        $controller = file_get_contents(__DIR__ . '/../Templates/Controller.php');
+        $controller = file_get_contents(__DIR__ . '/../Stubs/Controller.stub');
         $controller = str_replace('_NAME_TABLE_', snake_case($name_controller), $controller);
         $controller = str_replace('_TABLE_', $name_controller, $controller);
         $controller = str_replace('_CONTROLLER_NAMESPACE_', str_replace('/', '\\', $this->config->generator->paths->controllers), $controller);

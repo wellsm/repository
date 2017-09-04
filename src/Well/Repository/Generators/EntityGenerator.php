@@ -8,7 +8,7 @@ class EntityGenerator extends Generator
     {
         $name_entity = studly_case($name);
 
-        $entity = file_get_contents(__DIR__ . '/../Templates/Entity.php');
+        $entity = file_get_contents(__DIR__ . '/../Stubs/Entity.stub');
         $entity = str_replace('_TABLE_', $name_entity, $entity);
         $entity = str_replace('_ENTITY_NAMESPACE_', str_replace('/', '\\', $this->config->generator->paths->models), $entity);
         $entity = str_replace('_NAMESPACE_', $this->getNamespace(), $entity);
