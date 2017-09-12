@@ -369,6 +369,11 @@ abstract class BaseRepository
 		return $query;
 	}
 
+	public function truncate()
+	{
+		return $this->truncate();
+	}
+
 	public function resetScope()
 	{
 		$this->scopeQuery = null;
