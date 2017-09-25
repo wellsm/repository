@@ -144,6 +144,11 @@ abstract class BaseRepository
 		return $query;
 	}
 
+	public function whereIn($field, array $values, $columns = ['*'])
+	{
+		return $this->model->whereIn($field, $values);
+	}
+
 	public function search(array $attributes)
 	{
 		$searchable = $this->searchable;
