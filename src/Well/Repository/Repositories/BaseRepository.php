@@ -149,7 +149,7 @@ abstract class BaseRepository
 		return $this->model->whereIn($field, $values);
 	}
 
-	public function search(array $attributes)
+	public function search(array $attributes, $paginate = false)
 	{
 		$searchable = $this->searchable;
 		$where = array();
@@ -170,6 +170,10 @@ abstract class BaseRepository
 
 				array_push($where, array($key, $condition, $value));
 			}
+		}
+
+		if ($paginate) {
+			return $this->where($where)->paginate();
 		}
 
 		return $this->where($where)->get();
